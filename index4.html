@@ -13,10 +13,17 @@ sunShape = new createjs.Shape();
 sunShape.graphics.beginFill("#F00");
 sunShape.graphics.drawCircle(0, 0, 25);
 sunShape.graphics.endFill();
-sunShape.x = 50;
+sunShape.x = 25;
 sunShape.y = 25;
 stage.addChild(sunShape);
+createjs.Tween.get(sunShape, {loop:true})
+        .to({x:525, y:375}, 3000);
+
+createjs.Ticker.addEvent("tick", ticketHandler);   
+function ticketHandler(e)
+{     
 stage.update();
+}
 }
 3
 </script>
